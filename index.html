@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Power Box</title>
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">
+</head>
+<script>
+//Если с английского на русский, то передаём вторым параметром true.
+transliterate = (
+	function() {
+		var
+			rus = "щ   ш  ч  ц  ю  я  ё  ж  ъ  ы  э  а б в г д е з и й к л м н о п р с т у ф х ь".split(/ +/g),
+			eng = "shh sh ch cz yu ya yo zh `` y' e` a b v g d e z i j k l m n o p r s t u f x `".split(/ +/g)
+		;
+		return function(text, engToRus) {
+			var x;
+			for(x = 0; x < rus.length; x++) {
+				text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
+				text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());	
+			}
+			return text;
+		}
+	}
+)();
+
+function SaveUser()
+{
+	var UserName=document.getElementById("firstName");
+	var Title=document.getElementById("title");
+	var Comment=document.getElementById("comment");
+
+	UserName.value=transliterate(UserName.value);
+	Title.value=transliterate(Title.value);
+	Comment.value=transliterate(Comment.value);
+	alert("Your comment has been saved!");
+}
+</script>
+<body>
+<!--First dark block-->
+	<div class="first-block">
+		<!-- MOBILE MENU -->
+			<section class="mobile-menu">
+					<nav>
+						<li><a href="#about">About</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#blog">Blog</a></li>
+						<li><a href="#contacts">Contact</a></li>
+					</nav>
+			</section>
+			<!-- HEADER -->
+				<div class="header-background"></div>
+				<header id="header">
+					<section class="menu-container">
+						<a href="#">
+						<div class="logo-light"></div>
+						<div class="logo"></div>
+						</a>
+						<nav class="hidden-xs hidden-sm">
+							<li><a href="#about">About</a></li>
+							<li><a href="#projects">Projects</a></li>
+							<li><a href="https://www.facebook.com/NoosphereEngineering/">Facebook</a></li>
+							<li><a href="#contacts">Contacts</a></li>
+						</nav>
+						<div class="hamburger-icon hidden-md hidden-lg">
+							<div class="icon">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+					</section>
+				</header>
+				<section class="block-content">
+					<h1>Power Box</h1>
+					<hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad ipsam inventore repellat voluptates ex consectetur illum, magnam ipsum sequi asperiores pariatur eveniet culpa, quis dolorum et, tempora, dicta nulla beatae?</p>
+				</section>
+	</div>
+<div class="container">
+	<div class="whitespace">
+		<div class="col-md-6 col-sm-12">
+			<section class="block-content" id="research-block">
+				<h1>Project developers</h1>
+				<hr>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad ipsam inventore repellat voluptates ex consectetur illum, magnam ipsum sequi asperiores pariatur eveniet culpa, quis dolorum et, tempora, dicta nulla beatae?
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis amet, magni eligendi architecto quidem et tenetur, voluptates eaque deleniti quisquam eos quas adipisci laudantium earum quae odit! Autem, adipisci, quasi!</p>
+			</section>
+		</div>
+		<!--GALLERY -->
+		<div class="col-md-6 col-sm-12 hidden-xs">
+			<main>
+			    <div id="carousel">
+			       <div class="hideLeft">
+			        <img src="assets/images/slide2.jpg">
+			      </div>
+			      <div class="prevLeftSecond">
+			        <img src="assets/images/slide6.jpg">
+			      </div>
+			      <div class="prev">
+			        <img src="assets/images/slide7.jpg">
+			      </div>
+			      <div class="selected">
+			        <img src="assets/images/slide1.jpg">
+			      </div>
+			      <div class="next">
+			        <img src="assets/images/slide4.jpg">
+			      </div>
+			      <div class="nextRightSecond">
+			        <img src="assets/images/slide3.jpg">
+			      </div>
+			      <div class="nextRightSecond">
+			        <img src="assets/images/slide8.jpg">
+			      </div>
+			      <div class="hideRight">
+			        <img src="assets/images/slide2.jpg">
+			        
+			      </div>
+			    </div>
+			</main>
+		</div>
+	</div>
+		<!-- NUMBERS -->
+			<section class="page-numbers">
+				<div class="container">
+					<div class="row">
+						<div class="number-block col-sm-6 col-md-3">
+							<div class="potfolio-icon icon">&#xe605</div>
+							<ul>
+								<li><span class="value projects-value">0</span></li>
+								<li><span>happy clients</span></li>
+							</ul>
+						</div>
+						<div class="number-block col-sm-6 col-md-3">
+							<div class="clock-icon icon">&#xe610</div>
+							<ul>
+							   	<li><span class="value hours-value">0</span></li>
+								<li><span>working hours</span></li>
+							</ul>
+						</div>
+						<div class="number-block col-sm-6 col-md-3">
+							<div class="star-icon icon">&#xe629</div>
+							<ul>
+								<li><span class="value feedback-value">0</span></li>
+								<li><span>positive feedbacks</span></li>
+							</ul>
+						</div>	
+						<div class="number-block col-sm-6 col-md-3">
+						 	<div class="heart-icon icon">&#xe616</div>
+							<ul>
+								<li><span class="value clients-value">0</span></li>
+								<li><span>locations</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+	<div class="middle-block">
+		<div class="cotainer">
+		<section class="block-content col-md-12 col-lg-12" id="event-block">
+			<h1>Our events</h1>
+			<hr>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad ipsam inventore repellat voluptates ex consectetur illum, magnam ipsum sequi asperiores pariatur eveniet culpa, quis dolorum et, tempora, dicta nulla beatae?
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis amet, magni eligendi architecto quidem et tenetur, voluptates eaque deleniti quisquam eos quas adipisci laudantium earum quae odit! Autem, adipisci, quasi!
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis autem repellendus, culpa, eum harum aliquam adipisci quisquam ipsam quae ea. Tenetur, ratione, nam. Ad rerum quidem nihil aperiam excepturi similique?</p>
+		</section>
+		<section class="clients col-md-12 col-sm-12" data-flickity='{ "imagesLoaded": true, "percentPosition": false, "wrapAround": true }'>
+			<img src="assets/images/photo1.jpg" alt="Client name" class="client">
+			<img src="assets/images/photo3.jpg" alt="Client name" class="client">
+			<img src="assets/images/photo2.jpg" alt="Client name" class="client">
+			<img src="assets/images/photo4.jpg" alt="Client name" class="client">
+			<img src="assets/images/photo6.jpg" alt="Client name" class="client">
+			<img src="assets/images/photo5.jpg" alt="Client name" class="client">
+			<img src="assets/images/photo7.jpg" alt="Client name" class="client">
+			<img src="assets/images/photo8.jpg" alt="Client name" class="client">
+	</section>
+	</div>
+		
+	
+	</div>
+<div class="whitespace newspace hidden-xs">
+	<h1>Technical skills</h1>
+	<hr>
+	<div class="cabs">
+		<div class="cab cab-1"></div>
+		<div class="arrow"></div>
+		<div class="cab cab-2"></div>
+		<div class="arrow"></div>
+		<div class="cab cab-3"></div>
+		<div class="arrow"></div>
+	</div>
+	<div class="charge-block">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad ipsam inventore repellat voluptates ex consectetur illum, magnam ipsum sequi asperiores pariatur eveniet culpa, quis dolorum et, tempora, dicta nulla beatae?
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis amet, magni eligendi architecto quidem et tenetur, voluptates eaque deleniti quisquam eos quas adipisci laudantium earum quae odit! Autem, adipisci, quasi!</p>
+	</div>
+	<h1>Colors</h1>
+	<hr id="short-hr">
+	<div class="container hidden-xs ">
+			<div class="row">
+				<div class="spheres">
+					<div class="col-md-2 col-sm-4 color-sphere color-red">
+						<span class="black-span">Finance
+						</span>
+					</div>
+					<div class="col-md-2 col-sm-4 color-sphere color-yellow">
+						<span class="black-span">Communication
+						</span>
+					</div>
+					<div class="col-md-2 col-sm-4 color-sphere color-green">
+						<span class="black-span">Municipal
+						</span>
+					</div>
+					<div class="col-md-2 col-sm-4 color-sphere color-lightblue">
+						<span class="black-span">Tickets
+						</span>
+					</div>
+					<div class="col-md-2 col-sm-4 color-sphere color-orange">
+						<span class="black-span">Trading
+						</span>
+					</div>
+					<div class="col-md-2 col-sm-4 color-sphere color-blue">
+						<span class="black-span">Games
+						</span>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+	
+<!-- CONTACTS -->
+	<div class="last-block">
+		<section class="contacts" id="contacts">
+			
+
+			<div class="container">
+				<div class="row">
+					<div class="contact-info col-md-5">
+						<h2>Contact info:</h2>
+						<hr>
+							<p>Preasent  interdum congue mauris, et fringilla lacus pel</br>vitae. Quisque nisl mauris, aliquam eu ultrices vel, conse</br>vitae sapien at imperdiet risus/ Quisque cursus risus id.</br>fermentum, in auctor quam consestetur.</p>
+						<div class="requisites">
+							<span><b>Adress: </b><a href="https://goo.gl/maps/qT8NaxV9pFn
+
+							">1011 Santa Monica Boulevard, LA</a></span></br>
+							<span><b>Phone: </b><a href="tel:+44987065908">+44 987 065 908</a></span></br>
+							<span><b>Email: </b><a href="mailto:info@example.com">info@Example.com</a></span></br>
+							<span><b>Fax: </b><a href="tel:+44987065909">+44 987 065 909</a></span>
+						</div>
+					</div>
+					<form class="col-md-7" method="POST" id="forma"  action="InsertUser.php" novalidate>
+						<div class="row">
+							<div class="col-sm-6">
+								<input type="text" name="firstName" id="firstName" placeholder="Your Name" maxlength="50" required>
+							</div>
+							<div class="col-sm-6">
+								<input type="email" name="email" id="email" placeholder="Your E-mail" maxlength="50" required>
+							</div>
+							<div class="col-md-12">
+								<input type="text" name="title" id="title" placeholder="Your Title" maxlength="100" required>
+							</div>
+							<div class="col-md-12">
+								<input type="text" name="comment" id="comment" placeholder="Your Comment" maxlength="500" required>
+							</div>
+							<input type="submit" onclick="SaveUser();" name="Send_Message" id="Send_Message" value="Send Message">
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</div>
+<!-- SCRIPTS -->
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="assets/js/flickity.pkgd.min.js"></script>
+	<script src="assets/js/jquery.validate.js"></script>
+	<script src="assets/js/jquery.inputmask.js"></script>
+	<script src="assets/js/jq.js"></script>
+</body>
+</html>
